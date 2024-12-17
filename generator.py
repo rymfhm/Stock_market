@@ -17,11 +17,11 @@ def extract_colors(image, num_colors):
     
     pixels = image_data.reshape(-1, 3)
 
-
+    
     kmeans = KMeans(n_clusters=num_colors, random_state=42)
     kmeans.fit(pixels)
 
-    # Get dominant colors
+
     colors = kmeans.cluster_centers_.astype(int)
     return colors
 
